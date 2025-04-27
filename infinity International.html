@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Infinity International - Revolutionizing clean energy with hydrogen and nuclear solutions for a sustainable future.">
+  <title>Infinity International | Clean Energy Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+      background: black;
+      color: #fff;
+    }
+    header {
+      background: rgba(0, 0, 64, 0.8);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa') no-repeat center center/cover;
+      z-index: 0;
+      animation: moveOcean 30s linear infinite;
+      opacity: 0.3;
+    }
+    .stars, .shooting-star {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .stars::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 0 0 2px white, 100px 200px white, 300px 500px white, 700px 800px white;
+      animation: twinkling 5s infinite alternate;
+      transition: box-shadow 0.5s;
+    }
+    body:hover .stars::after {
+      box-shadow: 0 0 5px #00bfff, 150px 250px #00bfff, 350px 550px #00bfff, 750px 850px #00bfff;
+    }
+    @keyframes twinkling {
+      from { opacity: 0.8; }
+      to { opacity: 0.2; }
+    }
+    @keyframes moveOcean {
+      from { background-position: 0 0; }
+      to { background-position: 0 1000px; }
+    }
+    .shooting-star::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(white, transparent);
+      transform: rotate(45deg);
+      top: -50px;
+      left: 50%;
+      animation: shooting 5s linear infinite;
+    }
+    @keyframes shooting {
+      0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateX(300px) translateY(600px) rotate(45deg); opacity: 0; }
+    }
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+      z-index: 5;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 5;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #00bfff;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      backdrop-filter: blur(10px);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .news-container {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      animation: scrollNews 15s linear infinite;
+    }
+    @keyframes scrollNews {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100%); }
+    }
+    .news-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem 2rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+
+  <header>
+    <div><strong>Infinity International</strong></div>
+    <nav>
+      <a href="#whatwedo">What We Do</a>
+      <a href="#mission">Mission</a>
+      <a href="#news">News</a>
+      <a href="#hydrogen-info">Hydrogen Info</a> <!-- New Link -->
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Infinity International</h1>
+    <p>Powering the Future with Hydrogen and Clean Energy Solutions</p>
+  </section>
+
+  <section id="whatwedo" class="section">
+    <h2>What We Do</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Hydrogen Solutions</h3>
+        <p>Developing advanced hydrogen production, storage, and distribution technologies to fuel industries worldwide.</p>
+      </div>
+      <div class="card">
+        <h3>Nuclear Innovation</h3>
+        <p>Investing in next-generation nuclear power systems to provide safe, reliable, and carbon-free energy globally.</p>
+      </div>
+      <div class="card">
+        <h3>Strategic Partnerships</h3>
+        <p>Building alliances with leaders in technology and energy to accelerate the global energy transition.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission" class="section">
+    <h2>Our Mission</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      Infinity International is dedicated to revolutionizing the energy sector by delivering sustainable, affordable, and reliable energy solutions. Our mission is to achieve net-zero emissions by 2050 through innovation in hydrogen and nuclear technologies, powering industries, communities, and nations around the world.
+    </p>
+  </section>
+
+  <section id="news" class="section">
+    <h2>Latest News</h2>
+    <div class="news-container">
+      <div class="news-list">
+        <div class="news-item">
+          <h3>Breakthrough: Ocean-Derived Hydrogen Fuel Production Scales Globally</h3>
+          <p>Scientists achieve a major milestone in extracting hydrogen from seawater, opening doors to sustainable marine energy hubs.</p>
+        </div>
+        <div class="news-item">
+          <h3>Infinity International Launches Deep Sea Hydrogen Exploration Program</h3>
+          <p>New initiatives aim to tap into oceanic reserves for clean hydrogen sourcing, revolutionizing green fuel supply chains.</p>
+        </div>
+        <div class="news-item">
+          <h3>World's First Hydrogen-Powered Cargo Fleet Sets Sail</h3>
+          <p>Maritime shipping transitions to hydrogen propulsion, drastically reducing carbon emissions across global trade routes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hydrogen Information Section -->
+  <section id="hydrogen-info" class="section">
+    <h2>Understanding Hydrogen Energy</h2>
+    <p>
+      Hydrogen is one of the most promising sources of clean energy, offering a sustainable alternative to fossil fuels. As a versatile energy carrier, hydrogen can be used in a wide range of applications including transportation, industrial processes, and electricity generation.
+    </p>
+    <h3>Types of Hydrogen</h3>
+    <p>There are different types of hydrogen, classified based on how they are produced:</p>
+    <ul>
+      <li><strong>Green Hydrogen:</strong> Produced using renewable energy sources like wind and solar power, water electrolysis is used to split water molecules into hydrogen and oxygen, emitting no carbon dioxide.</li>
+      <li><strong>Blue Hydrogen:</strong> Produced from natural gas using steam methane reforming (SMR) with carbon capture and storage (CCS) to reduce emissions.</li>
+      <li><strong>Gray Hydrogen:</strong> Produced from natural gas or coal, but without carbon capture, emitting large amounts of CO2.</li>
+      <li><strong>Turquoise Hydrogen:</strong> A new method, produced by pyrolysis of methane, which turns methane into hydrogen and solid carbon.</li>
+    </ul>
+
+    <h3>How Hydrogen is Gathered</h3>
+    <p>
+      Hydrogen can be gathered through several processes, including:
+    </p>
+    <ul>
+      <li><strong>Electrolysis:</strong> Using electricity (ideally from renewable sources) to split water into hydrogen and oxygen.</li>
+      <li><strong>Steam Methane Reforming (SMR):</strong> Natural gas reacts with steam to produce hydrogen, with CO2 emissions.</li>
+      <li><strong>Pyrolysis:</strong> Heating methane to produce hydrogen and solid carbon (a cleaner alternative to SMR).</li>
+    </ul>
+
+    <h3>Hydrogen Production Methods Chart</h3>
+    <div id="hydrogen-chart" style="width:100%; height:400px;"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Infinity International. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Chart.js script for hydrogen production methods
+    const ctx = document.getElementById('hydrogen-chart').getContext('2d');
+    const hydrogenChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Electrolysis', 'SMR', 'Pyrolysis', 'Natural Gas'],
+        datasets: [{
+          label: 'Hydrogen Production Methods',
+          data: [80, 150, 70, 130], // Example data values (e.g., costs per ton of hydrogen produced)
+          backgroundColor: ['#00bfff', '#ff6347', '#32cd32', '#ffa500'],
+          borderColor: ['#0099cc', '#ff4500', '#28a745', '#e65100'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
